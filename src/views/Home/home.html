@@ -1,3 +1,12 @@
 <main>
-  <h1 class="text-3xl">Welcome to the Home Page</h1>
+  <h1 class="text-xl text-blue-500 font-bold">Welcome, please view available hotels</h1>
+  <div>
+    @for (item of hotels; track $index) {
+    <p>
+      <span class="text-blue-800">{{ item.name }}</span> - {{ item.address }} -
+      <span class="text-yellow-900">{{ item.stars }} stars</span> - Rate: {{ item.rate }} -
+      <span class="text-green-700">Price: ${{ item.price }}</span>
+    </p>
+    }
+  </div>
 </main>
