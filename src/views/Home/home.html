@@ -1,12 +1,17 @@
 <main>
   <h1 class="text-xl text-blue-500 font-bold">Welcome, please view available hotels</h1>
-  <div>
+  <div class="grid grid-cols-12 justify-center items-center mt-4 gap-4">
     @for (item of hotels; track $index) {
-    <p>
-      <span class="text-blue-800">{{ item.name }}</span> - {{ item.address }} -
-      <span class="text-yellow-900">{{ item.stars }} stars</span> - Rate: {{ item.rate }} -
-      <span class="text-green-700">Price: ${{ item.price }}</span>
-    </p>
+    <div class="col-span-3 border border-blue-500 p-2 rounded-lg shadow-lg min-h-[300px]">
+      <img class="rounded-lg" src="/images/hoteltest.jpg" alt="hotels" />
+      <p class="text-blue-800 text-xl font-bold">{{ item.name }}</p>
+      <p class="flex flex-col">
+        {{ item.address }}
+        <span class="text-yellow-500">{{ item.stars }} stars</span>
+        Rate: {{ item.rate }}
+        <span class="text-green-700">Price: ${{ item.price }}</span>
+      </p>
+    </div>
     }
   </div>
 </main>
